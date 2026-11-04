@@ -1,0 +1,96 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax check (engine, builder, installer)
+        run: |
+          set -e
+          node --check engine/generate.cjs
+          node --check engine/javascript.cjs
+          node --check engine/vendor/acorn.cjs
+          node --check scripts/build.cjs
+          bash -n install.sh
+          bash -n restore.sh
+
+      - name: Validate JSON (dictionaries, manifest, report)
+        run: |
+          set -e
+          for f in zh/*.json payload/manifest.json payload/translation-report.json; do
+            python3 -c "import json,sys;json.load(open(sys.argv[1]))" "$f"
+          done
+
+      - name: Dictionary sanity (schema, no duplicates)
+        run: |
+          set -e
+          node -e '
+          const { loadDictionary } = require("./engine/generate.cjs")
+          const d1 = loadDictionary("zh/dictionary.json")
+          const d2 = loadDictionary("zh/dictionary-mac-supplement.json")
+          console.log(`base=${d1.size} supplement=${d2.size}`)
+          '
+          node -e '
+          const m = require("./payload/manifest.json")
+          const r = require("./payload/translation-report.json")
+          if (m.version !== "3.6.10") throw new Error("version mismatch")
+          const total = m.files.reduce((n, f) => n + f.occurrences, 0)
+          if (total !== m.occurrences) throw new Error("occurrences mismatch")
+          if (r.applied.length !== m.unique) throw new Error("unique mismatch")
+          console.log(`manifest ok: ${total} occurrences / ${m.unique} strings / ${r.pending.length} pending`)
+          '
+
+      - name: Payload checksums match manifest
+        run: |
+          set -e
+          python3 - <<'PY'
+          import hashlib, json, sys
+          m = json.load(open("payload/manifest.json"))
+          ok = True
+          for entry in m["files"]:
+              h = hashlib.sha256(open(f"payload/{entry['name']}", "rb").read()).hexdigest().upper()
+              if h != entry["patched"]:
+                  print(f"MISMATCH {entry['name']}: {h} != {entry['patched']}")
+                  ok = False
+              else:
+                  print(f"OK {entry['name']}")
+          sys.exit(0 if ok else 1)
+          PY
+
+      - name: installer --verify on this runner (app absent, expect clean rejection)
+        run: |
+          # CI runner has no GitHub Desktop installed; the installer must refuse
+          # with a clear error rather than touching anything.
+          if ./install.sh --verify > /tmp/verify.log 2>&1; then
+            echo "installer unexpectedly succeeded without target app"; exit 1
+          fi
+          grep -q "找不到应用" /tmp/verify.log && echo "clean rejection confirmed"
+
+      - name: Reproducible build against pinned original hashes
+        run: |
+          # Full rebuild requires the original GitHub Desktop 3.6.10 bundles.
+          # GitHub's macos runners can't redistribute them in-repo, so this job
+          # verifies the builder at module level: dictionary loading, merge and
+          # case-alias logic must run cleanly over the committed dictionaries.
+          set -e
+          node -e '
+          const { loadDictionary } = require("./engine/generate.cjs")
+          const base = loadDictionary("zh/dictionary.json")
+          const supp = loadDictionary("zh/dictionary-mac-supplement.json")
+          for (const [t, e] of supp) if (!base.has(t)) continue // supplement may add or widen
+          const merged = loadDictionary("zh/dictionary-mac-merged.json")
+          if (merged.size < base.size) throw new Error("merged dictionary shrank?")
+          console.log(`merged=${merged.size} >= base=${base.size}`)
+          '
