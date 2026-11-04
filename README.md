@@ -13,7 +13,6 @@
 | `crash.js` | 6 | 崩溃页 |
 | **合计** | **2405 处 / 1874 条不同文案** | Windows 版包自报 2422 处，差额为 Windows 专属代码 |
 
-![macOS 菜单栏汉化效果](assets/menubar-zh.png)
 
 ## 快速开始
 
