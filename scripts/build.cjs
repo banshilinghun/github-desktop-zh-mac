@@ -39,20 +39,38 @@ const base = JSON.parse(fs.readFileSync(basePath, 'utf8'))
 const supplement = JSON.parse(fs.readFileSync(supplementPath, 'utf8'))
 if (supplement.locale !== 'zh-CN' || !Array.isArray(supplement.entries)) throw new Error('补充词库格式无效')
 
+// 补充词库可以有多个批次文件（dictionary-mac-supplement*.json），全部按同一规则合并。
+const supplementFiles = [supplementPath]
+  .concat(fs.readdirSync(path.join(root, 'zh'))
+    .filter(n => /^dictionary-mac-supplement.*\.json$/.test(n) && path.join(root, 'zh', n) !== supplementPath)
+    .map(n => path.join(root, 'zh', n)))
+const supplementAll = []
+const seenInFile = new Set()
+for (const file of supplementFiles) {
+  seenInFile.clear()
+  for (const item of JSON.parse(fs.readFileSync(file, 'utf8')).entries) {
+    // 同一文件内重复是笔误；跨文件同文本允许出现，走下面的 sources 合并。
+    if (seenInFile.has(item.text)) throw new Error(`${path.basename(file)} 内重复：${item.text}`)
+    seenInFile.add(item.text)
+    supplementAll.push(item)
+  }
+}
+
 const byText = new Map(base.entries.map(e => [e.text, e]))
 const seen = new Set()
-for (const item of supplement.entries) {
-  if (seen.has(item.text)) throw new Error(`补充词库重复：${item.text}`)
-  seen.add(item.text)
+for (const item of supplementAll) {
   const existing = byText.get(item.text)
   if (existing) {
+    // 跨批次同文本：合并 sources，沿用首次出现的译文。
     for (const s of item.sources) if (!existing.sources.includes(s)) existing.sources.push(s)
-  } else {
+  } else if (!seen.has(item.text)) {
+    seen.add(item.text)
     const entry = { text: item.text, translation: item.translation, sources: [...item.sources] }
     base.entries.push(entry)
     byText.set(entry.text, entry)
   }
 }
+Object.assign(supplement, { entries: supplementAll })
 
 // ---------- 大小写别名 ----------
 // 与引擎 pendingCandidate 一致的可翻译判定（引擎未导出该函数，这里保持同一规则）
@@ -188,13 +206,13 @@ for (const { file, srcPath, mapPath, source } of prepared) {
 manifest.occurrences = total
 manifest.unique = new Set(report.applied.map(x => x.text)).size
 manifest.caseAliases = aliasSources.size
-manifest.supplementEntries = supplement.entries.length
+manifest.supplementEntries = supplementAll.length
 manifest.roleLabels = report.roleLabels.map(x => `${x.file}:${x.key}`)
 manifest.dictionarySha256 = sha(fs.readFileSync(mergedPath))
 
 // 补充词库逐条核验：每条都必须在这轮构建里真正命中，否则视为笔误并停止生成。
 const appliedPairs = new Set(report.applied.map(x => `${x.source}\u0000${x.text}`))
-const unused = supplement.entries.filter(item => !item.sources.some(s => appliedPairs.has(`${s}\u0000${item.text}`)))
+const unused = supplementAll.filter(item => !item.sources.some(s => appliedPairs.has(`${s}\u0000${item.text}`)))
 if (unused.length) throw new Error('补充词库存在未命中的条目: ' + unused.map(x => JSON.stringify(x.text)).join(', '))
 
 fs.writeFileSync(path.join(outDir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n')

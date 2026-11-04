@@ -1254,7 +1254,8 @@
       "sources": [
         "app/src/ui/diff/diff-helpers.tsx",
         "app/src/ui/diff/image-diffs/two-up.tsx",
-        "app/src/ui/diff/image-diffs/new-image-diff.tsx"
+        "app/src/ui/diff/image-diffs/new-image-diff.tsx",
+        "app/src/ui/diff/side-by-side-diff.tsx"
       ]
     },
     {
@@ -5144,7 +5145,8 @@
       "text": "Modified",
       "translation": "已修改",
       "sources": [
-        "app/src/ui/diff/diff-helpers.tsx"
+        "app/src/ui/diff/diff-helpers.tsx",
+        "app/src/ui/diff/side-by-side-diff.tsx"
       ]
     },
     {
@@ -5514,7 +5516,9 @@
       "text": "Not Now",
       "translation": "暂不",
       "sources": [
-        "app/src/ui/move-to-applications-folder.tsx"
+        "app/src/ui/move-to-applications-folder.tsx",
+        "app/src/ui/lfs/initialize-lfs.tsx",
+        "app/src/ui/lfs/attribute-mismatch.tsx"
       ]
     },
     {
@@ -7256,7 +7260,9 @@
       "text": "Sign In",
       "translation": "登录",
       "sources": [
-        "app/src/ui/preferences/copilot.tsx"
+        "app/src/ui/preferences/copilot.tsx",
+        "app/src/ui/clone-repository/clone-repository.tsx",
+        "app/src/ui/publish-repository/publish.tsx"
       ]
     },
     {
@@ -12368,7 +12374,8 @@
       "text": "Discarded Changes Will Be Unrecoverable",
       "translation": "放弃的更改将无法恢复",
       "sources": [
-        "app/src/main-process/menu/build-test-menu.ts"
+        "app/src/main-process/menu/build-test-menu.ts",
+        "app/src/ui/discard-changes/discard-changes-retry-dialog.tsx"
       ]
     },
     {
@@ -12382,7 +12389,8 @@
       "text": "Files Too Large",
       "translation": "文件过大",
       "sources": [
-        "app/src/main-process/menu/build-test-menu.ts"
+        "app/src/main-process/menu/build-test-menu.ts",
+        "app/src/ui/changes/oversized-files-warning.tsx"
       ]
     },
     {
@@ -12396,14 +12404,16 @@
       "text": "Invalidated Account Token",
       "translation": "账户令牌已失效",
       "sources": [
-        "app/src/main-process/menu/build-test-menu.ts"
+        "app/src/main-process/menu/build-test-menu.ts",
+        "app/src/ui/invalidated-token/invalidated-token.tsx"
       ]
     },
     {
       "text": "Push Rejected",
       "translation": "推送被拒绝",
       "sources": [
-        "app/src/main-process/menu/build-test-menu.ts"
+        "app/src/main-process/menu/build-test-menu.ts",
+        "app/src/ui/workflow-push-rejected/workflow-push-rejected.tsx"
       ]
     },
     {
@@ -12417,42 +12427,48 @@
       "text": "Unable to Locate Git",
       "translation": "无法找到 Git",
       "sources": [
-        "app/src/main-process/menu/build-test-menu.ts"
+        "app/src/main-process/menu/build-test-menu.ts",
+        "app/src/ui/install-git/install.tsx"
       ]
     },
     {
       "text": "Unable to Open External Editor",
       "translation": "无法打开外部编辑器",
       "sources": [
-        "app/src/main-process/menu/build-test-menu.ts"
+        "app/src/main-process/menu/build-test-menu.ts",
+        "app/src/ui/editor/editor-error.tsx"
       ]
     },
     {
       "text": "Unable to Open Shell",
       "translation": "无法打开终端",
       "sources": [
-        "app/src/main-process/menu/build-test-menu.ts"
+        "app/src/main-process/menu/build-test-menu.ts",
+        "app/src/ui/shell/shell-error.tsx"
       ]
     },
     {
       "text": "Untrusted Server",
       "translation": "不受信任的服务器",
       "sources": [
-        "app/src/main-process/menu/build-test-menu.ts"
+        "app/src/main-process/menu/build-test-menu.ts",
+        "app/src/ui/untrusted-certificate/untrusted-certificate.tsx"
       ]
     },
     {
       "text": "Update Existing Git LFS Filters?",
       "translation": "更新现有 Git LFS 过滤器？",
       "sources": [
-        "app/src/main-process/menu/build-test-menu.ts"
+        "app/src/main-process/menu/build-test-menu.ts",
+        "app/src/ui/lfs/attribute-mismatch.tsx"
       ]
     },
     {
       "text": "Upstream Already Exists",
       "translation": "上游已存在",
       "sources": [
-        "app/src/main-process/menu/build-test-menu.ts"
+        "app/src/main-process/menu/build-test-menu.ts",
+        "app/src/ui/upstream-already-exists/upstream-already-exists.tsx"
       ]
     },
     {
@@ -12761,7 +12777,8 @@
       "text": "URL",
       "translation": "地址",
       "sources": [
-        "app/src/ui/cli-action/test-cli-action-dialog.tsx"
+        "app/src/ui/cli-action/test-cli-action-dialog.tsx",
+        "app/src/ui/clone-repository/clone-repository.tsx"
       ]
     },
     {
@@ -13848,7 +13865,8 @@
       "text": "Default Branch",
       "translation": "默认分支",
       "sources": [
-        "app/src/main-process/menu/build-default-menu.ts"
+        "app/src/main-process/menu/build-default-menu.ts",
+        "app/src/ui/branches/branch-list.tsx"
       ]
     },
     {
@@ -13897,7 +13915,8 @@
       "text": "Clone Repository…",
       "translation": "克隆仓库…",
       "sources": [
-        "app/src/main-process/menu/build-default-menu.ts"
+        "app/src/main-process/menu/build-default-menu.ts",
+        "app/src/ui/repositories-list/repositories-list.tsx"
       ]
     },
     {
@@ -13932,7 +13951,8 @@
       "text": "Select All",
       "translation": "全选",
       "sources": [
-        "app/src/main-process/menu/build-default-menu.ts"
+        "app/src/main-process/menu/build-default-menu.ts",
+        "app/src/ui/diff/side-by-side-diff.tsx"
       ]
     },
     {
@@ -14100,7 +14120,8 @@
       "text": "Open With…",
       "translation": "打开方式…",
       "sources": [
-        "app/src/main-process/menu/build-default-menu.ts"
+        "app/src/main-process/menu/build-default-menu.ts",
+        "app/src/ui/open-with-external-editor/open-with-external-editor.tsx"
       ]
     },
     {
@@ -14135,21 +14156,24 @@
       "text": "Discard All Changes…",
       "translation": "丢弃所有更改…",
       "sources": [
-        "app/src/main-process/menu/build-default-menu.ts"
+        "app/src/main-process/menu/build-default-menu.ts",
+        "app/src/ui/changes/filter-changes-list.tsx"
       ]
     },
     {
       "text": "Stash All Changes…",
       "translation": "暂存所有更改…",
       "sources": [
-        "app/src/main-process/menu/build-default-menu.ts"
+        "app/src/main-process/menu/build-default-menu.ts",
+        "app/src/ui/changes/filter-changes-list.tsx"
       ]
     },
     {
       "text": "Stash All Changes",
       "translation": "暂存所有更改",
       "sources": [
-        "app/src/main-process/menu/build-default-menu.ts"
+        "app/src/main-process/menu/build-default-menu.ts",
+        "app/src/ui/changes/filter-changes-list.tsx"
       ]
     },
     {
@@ -14248,6 +14272,134 @@
       "translation": "添加到词典",
       "sources": [
         "app/src/main-process/menu/build-spell-check-menu.ts"
+      ]
+    },
+    {
+      "text": "Reveal in Finder",
+      "translation": "在访达中显示",
+      "sources": [
+        "app/src/ui/lib/context-menu.ts"
+      ]
+    },
+    {
+      "text": "Discard Changes",
+      "translation": "丢弃更改",
+      "sources": [
+        "app/src/ui/changes/filter-changes-list.tsx",
+        "app/src/ui/discard-changes/discard-changes-dialog.tsx",
+        "app/src/ui/discard-changes/discard-selection-dialog.tsx"
+      ]
+    },
+    {
+      "text": "Diff Settings",
+      "translation": "差异设置",
+      "sources": [
+        "app/src/ui/diff/diff-options.tsx"
+      ]
+    },
+    {
+      "text": "Home",
+      "translation": "首页",
+      "sources": [
+        "app/src/ui/app-menu/menu-pane.tsx"
+      ]
+    },
+    {
+      "text": "Worktree",
+      "translation": "工作树",
+      "sources": [
+        "app/src/ui/worktrees/worktree-list.tsx"
+      ]
+    },
+    {
+      "text": "Settings",
+      "translation": "设置",
+      "sources": [
+        "app/src/ui/changes/no-changes.tsx",
+        "app/src/ui/tutorial/tutorial-panel.tsx",
+        "app/src/ui/preferences/preferences.tsx"
+      ]
+    },
+    {
+      "text": "Open Preferences",
+      "translation": "打开设置",
+      "sources": [
+        "app/src/ui/app-error.tsx",
+        "app/src/ui/editor/editor-error.tsx",
+        "app/src/ui/shell/shell-error.tsx"
+      ]
+    },
+    {
+      "text": "Terminal window",
+      "translation": "终端窗口",
+      "sources": [
+        "app/src/ui/install-git/install.tsx"
+      ]
+    },
+    {
+      "text": "View Certificate",
+      "translation": "查看证书",
+      "sources": [
+        "app/src/ui/untrusted-certificate/untrusted-certificate.tsx"
+      ]
+    },
+    {
+      "text": "Also move this repository to Trash",
+      "translation": "同时将此仓库移到废纸篓",
+      "sources": [
+        "app/src/ui/remove-repository/confirm-remove-repository.tsx"
+      ]
+    },
+    {
+      "text": "Git LFS",
+      "translation": "Git LFS",
+      "sources": [
+        "app/src/ui/lfs/initialize-lfs.tsx",
+        "app/src/ui/lfs/attribute-mismatch.tsx",
+        "app/src/ui/changes/oversized-files-warning.tsx"
+      ]
+    },
+    {
+      "text": "A repository must have a GitHub repository to add an upstream remote",
+      "translation": "仓库必须已有 GitHub 仓库才能添加上游远程",
+      "sources": [
+        "app/src/ui/upstream-already-exists/upstream-already-exists.tsx"
+      ]
+    },
+    {
+      "text": "A repository must have a parent repository to add an upstream remote",
+      "translation": "仓库必须已有父仓库才能添加上游远程",
+      "sources": [
+        "app/src/ui/upstream-already-exists/upstream-already-exists.tsx"
+      ]
+    },
+    {
+      "text": "Newer Commits on Remote",
+      "translation": "远程有更新的提交",
+      "sources": [
+        "app/src/ui/push-needs-pull/push-needs-pull-warning.tsx"
+      ]
+    },
+    {
+      "text": "Trash",
+      "translation": "废纸篓",
+      "sources": [
+        "app/src/ui/discard-changes/discard-changes-dialog.tsx",
+        "app/src/ui/discard-changes/discard-changes-retry-dialog.tsx"
+      ]
+    },
+    {
+      "text": "Settings → Copilot",
+      "translation": "设置 → Copilot",
+      "sources": [
+        "app/src/ui/multi-commit-operation/dialog/copilot-conflict-resolution-always-nudge.tsx"
+      ]
+    },
+    {
+      "text": "Choose the GitHub Copilot application (.app).",
+      "translation": "请选择 GitHub Copilot 应用（.app）。",
+      "sources": [
+        "app/src/ui/preferences/preferences.tsx"
       ]
     },
     {

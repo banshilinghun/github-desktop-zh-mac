@@ -9,9 +9,9 @@
 | 文件 | 替换处数 | 说明 |
 |---|---|---|
 | `main.js` | 121 | 主进程菜单、原生对话框（另修正 3 处 Electron role 英文标签：窗口 / 帮助 / 最小化 / 缩放 / 关闭） |
-| `renderer.js` | 2225 | 主窗口 UI：欢迎页、设置、差异、提交、分支、仓库列表…… |
+| `renderer.js` | 2278 | 主窗口 UI：欢迎页、设置、差异、提交、分支、仓库列表…… |
 | `crash.js` | 6 | 崩溃页 |
-| **合计** | **2352 处 / 1857 条不同文案** | Windows 版包自报 2422 处，差额为 Windows 专属代码 |
+| **合计** | **2405 处 / 1874 条不同文案** | Windows 版包自报 2422 处，差额为 Windows 专属代码 |
 
 ![macOS 菜单栏汉化效果](assets/menubar-zh.png)
 
@@ -33,7 +33,7 @@ cd github-desktop-zh-mac
 ## 工作原理
 
 1. **词库替换引擎**：基于 [Johnserf-Seed/GitHub-Desktop-Chinese-Language-Pack](https://github.com/Johnserf-Seed/GitHub-Desktop-Chinese-Language-Pack) 的 MIT 引擎（含内嵌 acorn 解析器），对每个字符串字面量解析其源映射（source map）归属，只替换白名单源文件里的界面文案；替换后做 AST 结构等价比对，保证除字符串字面量外程序结构不变。
-2. **macOS 菜单补充词库**（`zh/dictionary-mac-supplement.json`，76 条）：macOS 构建的菜单源串不带 Windows 的 `&` 助记符（`File` vs `&File`），按 mac 实际源串重写译文，来源限定菜单模块，不误伤 `File/View/Copy` 这类通用词。
+2. **macOS 菜单补充词库**（`zh/dictionary-mac-supplement*.json`，115 条两批）：macOS 构建的菜单源串不带 Windows 的 `&` 助记符（`File` vs `&File`），按 mac 实际源串重写译文，来源限定菜单模块，不误伤 `File/View/Copy` 这类通用词。
 3. **大小写别名**（189 条生效）：两个构建的英文存在大小写差异（`…on your local drive…` vs `…on your Local Drive…`），自动对齐译文，并沿用引擎「像界面文案」的判定，跳过 octicon 名、CSS 类名、状态键、dispatcher/stores 等非展示字符串。
 4. **Electron role 标签**：`{role:"window"}`、`{role:"help"}` 等由 Electron 生成英文默认标签，源码中没有可替换字符串；构建器做定点插入（`label:"窗口"` 等），每条必须恰好命中一次并重新解析验证。
 5. **哈希锁定可复现构建**：`payload/manifest.json` 锁定每个文件的原始/补丁 SHA-256；`scripts/build.cjs` 重新生成时逐字节比对，不一致直接报错，不产出半成品。
@@ -45,7 +45,7 @@ install.sh / restore.sh          macOS 安装 / 还原（校验、备份、原�
 payload/                         补丁产物（main.js / renderer.js / crash.js + manifest）
 zh/                              词库：dictionary.json（基础）、dictionary-mac-supplement.json（mac 补充）、
                                  dictionary-mac-merged.json（构建时合并结果）、
-payload/translation-report.json 每处替换的来源与 143 条待审候选
+payload/translation-report.json 每处替换的来源与 94 条待审候选
 scripts/build.cjs                生成器：从原始应用重新构建补丁（Node 22+）
 engine/                          翻译引擎（MIT，源自 Johnserf-Seed 项目）+ 内嵌 acorn
 docs/使用说明.txt                 详细中文说明（坑、排错、App 管理权限、钥匙串弹窗）
@@ -70,7 +70,7 @@ node scripts/build.cjs "/Applications/GitHub Desktop.app" ./payload
 
 - Git、GitHub 服务器、Copilot 实时返回的文本；外部网页；诊断日志
 - 产品名 / 模型名 / 快捷键 / 文件名 / 示例地址 / 用户内容（按原样保留）
-- `translation-report.json` 里 143 条引擎判定「像 UI」但词库未收录的 pending 候选，未擅自翻译
+- `translation-report.json` 里 94 条引擎判定「像 UI」但词库未收录的 pending 候选，未擅自翻译
 
 ## 许可
 

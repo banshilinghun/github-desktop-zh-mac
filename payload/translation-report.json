@@ -2,9 +2,9 @@
   "version": "3.6.10",
   "platform": "darwin",
   "bundle": "/Applications/GitHub Desktop.app",
-  "dictionaryEntries": 2172,
+  "dictionaryEntries": 2189,
   "caseAliases": 189,
-  "caseAliasSkippedAmbiguous": 4,
+  "caseAliasSkippedAmbiguous": 0,
   "roleLabels": [
     {
       "file": "main.js",
@@ -38,14 +38,14 @@
     },
     "renderer.js": {
       "originalSha256": "ECBD659F993A8DD6B30767F5321279B0CAABF937E5EEF05F0F163A3F271CC289",
-      "patchedSha256": "79904A59FDF5865465F53A6C49D5A2D3E53FC500D18E2DC2CBEB19C1C01D09DB",
+      "patchedSha256": "72816F76076FCE86E8C225B58864B882567FEA8FE4F9BDFCE714268BD0F53007",
       "bytes": [
         3292814,
-        3285508
+        3285437
       ],
-      "occurrences": 2225,
-      "unique": 2071,
-      "pending": 142,
+      "occurrences": 2278,
+      "unique": 2120,
+      "pending": 93,
       "roleLabels": []
     },
     "crash.js": {
@@ -1086,6 +1086,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Reveal in Finder",
+      "translation": "在访达中显示",
+      "source": "app/src/ui/lib/context-menu.ts",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Open with Default Program",
       "translation": "使用默认程序打开",
       "source": "app/src/ui/lib/context-menu.ts",
@@ -1655,6 +1662,13 @@
       "file": "renderer.js",
       "text": "to clone from anywhere within the app",
       "translation": "可在应用任意位置克隆仓库",
+      "source": "app/src/ui/repositories-list/repositories-list.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Clone Repository…",
+      "translation": "克隆仓库…",
       "source": "app/src/ui/repositories-list/repositories-list.tsx",
       "occurrences": 1
     },
@@ -3326,6 +3340,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Select All",
+      "translation": "全选",
+      "source": "app/src/ui/diff/side-by-side-diff.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Expand Whole File",
       "translation": "展开整个文件",
       "source": "app/src/ui/diff/side-by-side-diff.tsx",
@@ -3340,8 +3361,22 @@
     },
     {
       "file": "renderer.js",
+      "text": "Added",
+      "translation": "已添加",
+      "source": "app/src/ui/diff/side-by-side-diff.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Removed",
       "translation": "删除的",
+      "source": "app/src/ui/diff/side-by-side-diff.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Modified",
+      "translation": "已修改",
       "source": "app/src/ui/diff/side-by-side-diff.tsx",
       "occurrences": 1
     },
@@ -3774,6 +3809,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Discard Changes",
+      "translation": "丢弃更改",
+      "source": "app/src/ui/changes/filter-changes-list.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Discard ",
       "translation": "丢弃 ",
       "source": "app/src/ui/changes/filter-changes-list.tsx",
@@ -3783,6 +3825,27 @@
       "file": "renderer.js",
       "text": " Selected Changes",
       "translation": " 所选更改",
+      "source": "app/src/ui/changes/filter-changes-list.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Discard All Changes…",
+      "translation": "丢弃所有更改…",
+      "source": "app/src/ui/changes/filter-changes-list.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Stash All Changes…",
+      "translation": "暂存所有更改…",
+      "source": "app/src/ui/changes/filter-changes-list.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Stash All Changes",
+      "translation": "暂存所有更改",
       "source": "app/src/ui/changes/filter-changes-list.tsx",
       "occurrences": 1
     },
@@ -3963,6 +4026,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Diff Settings",
+      "translation": "差异设置",
+      "source": "app/src/ui/diff/diff-options.tsx",
+      "occurrences": 2
+    },
+    {
+      "file": "renderer.js",
       "text": "Diff display",
       "translation": "差异显示",
       "source": "app/src/ui/diff/diff-options.tsx",
@@ -4001,6 +4071,13 @@
       "text": "Interacting with individual lines or hunks will be disabled while hiding whitespace.",
       "translation": "隐藏空白字符更改时，无法选择单行或差异块。",
       "source": "app/src/ui/diff/diff-options.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Home",
+      "translation": "首页",
+      "source": "app/src/ui/app-menu/menu-pane.tsx",
       "occurrences": 1
     },
     {
@@ -4364,6 +4441,13 @@
       "file": "renderer.js",
       "text": "Last Modified: ",
       "translation": "最后修改：",
+      "source": "app/src/ui/branches/branch-list.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Default Branch",
+      "translation": "默认分支",
       "source": "app/src/ui/branches/branch-list.tsx",
       "occurrences": 1
     },
@@ -4859,6 +4943,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Worktree",
+      "translation": "工作树",
+      "source": "app/src/ui/worktrees/worktree-list.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Main ",
       "translation": "主 ",
       "source": "app/src/ui/worktrees/worktree-list.tsx",
@@ -4987,6 +5078,13 @@
       "file": "renderer.js",
       "text": "Select your editor in",
       "translation": "在此处选择编辑器：",
+      "source": "app/src/ui/changes/no-changes.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Settings",
+      "translation": "设置",
       "source": "app/src/ui/changes/no-changes.tsx",
       "occurrences": 1
     },
@@ -6308,6 +6406,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Settings",
+      "translation": "设置",
+      "source": "app/src/ui/tutorial/tutorial-panel.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "It doesn’t look like you have a text editor installed. We can recommend",
       "translation": "似乎尚未安装文本编辑器。我们推荐",
       "source": "app/src/ui/tutorial/tutorial-panel.tsx",
@@ -6847,6 +6952,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Discard Changes",
+      "translation": "丢弃更改",
+      "source": "app/src/ui/discard-changes/discard-changes-dialog.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Confirm Discard All Changes",
       "translation": "确认丢弃所有更改",
       "source": "app/src/ui/discard-changes/discard-changes-dialog.tsx",
@@ -6863,6 +6975,13 @@
       "file": "renderer.js",
       "text": "Changes can be restored by retrieving them from the ",
       "translation": "可以从以下位置找回文件以恢复更改：",
+      "source": "app/src/ui/discard-changes/discard-changes-dialog.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Trash",
+      "translation": "废纸篓",
       "source": "app/src/ui/discard-changes/discard-changes-dialog.tsx",
       "occurrences": 1
     },
@@ -8611,6 +8730,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Settings",
+      "translation": "设置",
+      "source": "app/src/ui/preferences/preferences.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Accounts",
       "translation": "账户",
       "source": "app/src/ui/preferences/preferences.tsx",
@@ -8662,6 +8788,13 @@
       "file": "renderer.js",
       "text": "Save",
       "translation": "保存",
+      "source": "app/src/ui/preferences/preferences.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Choose the GitHub Copilot application (.app).",
+      "translation": "请选择 GitHub Copilot 应用（.app）。",
       "source": "app/src/ui/preferences/preferences.tsx",
       "occurrences": 1
     },
@@ -9171,6 +9304,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Open With…",
+      "translation": "打开方式…",
+      "source": "app/src/ui/open-with-external-editor/open-with-external-editor.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Open",
       "translation": "打开",
       "source": "app/src/ui/open-with-external-editor/open-with-external-editor.tsx",
@@ -9257,6 +9397,13 @@
       "file": "renderer.js",
       "text": "Close",
       "translation": "关闭",
+      "source": "app/src/ui/app-error.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Open Preferences",
+      "translation": "打开设置",
       "source": "app/src/ui/app-error.tsx",
       "occurrences": 1
     },
@@ -9808,8 +9955,22 @@
     },
     {
       "file": "renderer.js",
+      "text": "URL",
+      "translation": "地址",
+      "source": "app/src/ui/clone-repository/clone-repository.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Clone",
       "translation": "克隆",
+      "source": "app/src/ui/clone-repository/clone-repository.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Sign In",
+      "translation": "登录",
       "source": "app/src/ui/clone-repository/clone-repository.tsx",
       "occurrences": 1
     },
@@ -10130,8 +10291,22 @@
     },
     {
       "file": "renderer.js",
+      "text": "Unable to Locate Git",
+      "translation": "无法找到 Git",
+      "source": "app/src/ui/install-git/install.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "We were unable to locate Git on your system. This means you won't be able to execute any Git commands in the",
       "translation": "无法在系统中找到 Git。这意味着你将无法在以下终端中执行 Git 命令：",
+      "source": "app/src/ui/install-git/install.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Terminal window",
+      "translation": "终端窗口",
       "source": "app/src/ui/install-git/install.tsx",
       "occurrences": 1
     },
@@ -10165,8 +10340,22 @@
     },
     {
       "file": "renderer.js",
+      "text": "Open Preferences",
+      "translation": "打开设置",
+      "source": "app/src/ui/editor/editor-error.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Download ",
       "translation": "下载 ",
+      "source": "app/src/ui/editor/editor-error.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Unable to Open External Editor",
+      "translation": "无法打开外部编辑器",
       "source": "app/src/ui/editor/editor-error.tsx",
       "occurrences": 1
     },
@@ -10410,6 +10599,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Sign In",
+      "translation": "登录",
+      "source": "app/src/ui/publish-repository/publish.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Sign in to your GitHub.com account to access your repositories.",
       "translation": "登录 GitHub.com 账户以访问你的仓库。",
       "source": "app/src/ui/publish-repository/publish.tsx",
@@ -10455,6 +10651,13 @@
       "text": "GitHub Desktop also distributes these libraries:",
       "translation": "GitHub Desktop 还包含以下库：",
       "source": "app/src/ui/acknowledgements/acknowledgements.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Untrusted Server",
+      "translation": "不受信任的服务器",
+      "source": "app/src/ui/untrusted-certificate/untrusted-certificate.tsx",
       "occurrences": 1
     },
     {
@@ -10510,6 +10713,13 @@
       "file": "renderer.js",
       "text": "If you are unsure of what to do, cancel and contact your system administrator.",
       "translation": "如果不确定如何处理，请取消并联系系统管理员。",
+      "source": "app/src/ui/untrusted-certificate/untrusted-certificate.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "View Certificate",
+      "translation": "查看证书",
       "source": "app/src/ui/untrusted-certificate/untrusted-certificate.tsx",
       "occurrences": 1
     },
@@ -10608,6 +10818,13 @@
       "file": "renderer.js",
       "text": "The repository will be removed from GitHub Desktop:",
       "translation": "以下仓库将从 GitHub Desktop 中移除：",
+      "source": "app/src/ui/remove-repository/confirm-remove-repository.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Also move this repository to Trash",
+      "translation": "同时将此仓库移到废纸篓",
       "source": "app/src/ui/remove-repository/confirm-remove-repository.tsx",
       "occurrences": 1
     },
@@ -10956,8 +11173,22 @@
     },
     {
       "file": "renderer.js",
+      "text": "Unable to Open Shell",
+      "translation": "无法打开终端",
+      "source": "app/src/ui/shell/shell-error.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Close",
       "translation": "关闭",
+      "source": "app/src/ui/shell/shell-error.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Open Preferences",
+      "translation": "打开设置",
       "source": "app/src/ui/shell/shell-error.tsx",
       "occurrences": 1
     },
@@ -10970,10 +11201,24 @@
     },
     {
       "file": "renderer.js",
+      "text": "Not Now",
+      "translation": "暂不",
+      "source": "app/src/ui/lfs/initialize-lfs.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": " repositories use",
       "translation": " 个仓库使用",
       "source": "app/src/ui/lfs/initialize-lfs.tsx",
       "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Git LFS",
+      "translation": "Git LFS",
+      "source": "app/src/ui/lfs/initialize-lfs.tsx",
+      "occurrences": 2
     },
     {
       "file": "renderer.js",
@@ -11026,6 +11271,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Update Existing Git LFS Filters?",
+      "translation": "更新现有 Git LFS 过滤器？",
+      "source": "app/src/ui/lfs/attribute-mismatch.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Git LFS filters are already configured in",
       "translation": "Git LFS 过滤器已配置于",
       "source": "app/src/ui/lfs/attribute-mismatch.tsx",
@@ -11050,6 +11302,34 @@
       "text": "Update Existing Filters",
       "translation": "更新现有筛选器",
       "source": "app/src/ui/lfs/attribute-mismatch.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Not Now",
+      "translation": "暂不",
+      "source": "app/src/ui/lfs/attribute-mismatch.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "A repository must have a GitHub repository to add an upstream remote",
+      "translation": "仓库必须已有 GitHub 仓库才能添加上游远程",
+      "source": "app/src/ui/upstream-already-exists/upstream-already-exists.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "A repository must have a parent repository to add an upstream remote",
+      "translation": "仓库必须已有父仓库才能添加上游远程",
+      "source": "app/src/ui/upstream-already-exists/upstream-already-exists.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Upstream Already Exists",
+      "translation": "上游已存在",
+      "source": "app/src/ui/upstream-already-exists/upstream-already-exists.tsx",
       "occurrences": 1
     },
     {
@@ -11243,6 +11523,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Files Too Large",
+      "translation": "文件过大",
+      "source": "app/src/ui/changes/oversized-files-warning.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "The following files are over 100MB.",
       "translation": "以下文件超过 100 MB。",
       "source": "app/src/ui/changes/oversized-files-warning.tsx",
@@ -11264,6 +11551,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Git LFS",
+      "translation": "Git LFS",
+      "source": "app/src/ui/changes/oversized-files-warning.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": " to store large files on GitHub.",
       "translation": " 在 GitHub 上存储大文件。",
       "source": "app/src/ui/changes/oversized-files-warning.tsx",
@@ -11274,6 +11568,13 @@
       "text": "Commit Anyway",
       "translation": "仍然提交",
       "source": "app/src/ui/changes/oversized-files-warning.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Newer Commits on Remote",
+      "translation": "远程有更新的提交",
+      "source": "app/src/ui/push-needs-pull/push-needs-pull-warning.tsx",
       "occurrences": 1
     },
     {
@@ -11449,6 +11750,13 @@
       "text": "Continue",
       "translation": "继续",
       "source": "app/src/ui/no-repositories/create-tutorial-repository-dialog.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Push Rejected",
+      "translation": "推送被拒绝",
+      "source": "app/src/ui/workflow-push-rejected/workflow-push-rejected.tsx",
       "occurrences": 1
     },
     {
@@ -11729,6 +12037,13 @@
       "text": "Continue",
       "translation": "继续",
       "source": "app/src/ui/choose-fork-settings/choose-fork-settings-dialog.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Discard Changes",
+      "translation": "丢弃更改",
+      "source": "app/src/ui/discard-changes/discard-selection-dialog.tsx",
       "occurrences": 1
     },
     {
@@ -13168,6 +13483,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Invalidated Account Token",
+      "translation": "账户令牌已失效",
+      "source": "app/src/ui/invalidated-token/invalidated-token.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Your account token is no longer valid and you have been signed out from your ",
       "translation": "账户令牌已失效，你已退出以下账户：",
       "source": "app/src/ui/invalidated-token/invalidated-token.tsx",
@@ -13525,10 +13847,24 @@
     },
     {
       "file": "renderer.js",
+      "text": "Discarded Changes Will Be Unrecoverable",
+      "translation": "放弃的更改将无法恢复",
+      "source": "app/src/ui/discard-changes/discard-changes-retry-dialog.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Failed to discard changes to ",
       "translation": "无法放弃以下文件的更改：",
       "source": "app/src/ui/discard-changes/discard-changes-retry-dialog.tsx",
       "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
+      "text": "Trash",
+      "translation": "废纸篓",
+      "source": "app/src/ui/discard-changes/discard-changes-retry-dialog.tsx",
+      "occurrences": 3
     },
     {
       "file": "renderer.js",
@@ -14862,6 +15198,13 @@
     },
     {
       "file": "renderer.js",
+      "text": "Settings → Copilot",
+      "translation": "设置 → Copilot",
+      "source": "app/src/ui/multi-commit-operation/dialog/copilot-conflict-resolution-always-nudge.tsx",
+      "occurrences": 1
+    },
+    {
+      "file": "renderer.js",
       "text": "Yes",
       "translation": "是",
       "source": "app/src/ui/multi-commit-operation/dialog/copilot-conflict-resolution-always-nudge.tsx",
@@ -15437,12 +15780,6 @@
     },
     {
       "file": "renderer.js",
-      "text": "Reveal in Finder",
-      "source": "app/src/ui/lib/context-menu.ts",
-      "line": 23
-    },
-    {
-      "file": "renderer.js",
       "text": "New Worktree…",
       "source": "app/src/ui/repositories-list/repository-list-item-context-menu.ts",
       "line": 134
@@ -15470,12 +15807,6 @@
       "text": "Shift",
       "source": "app/src/ui/repositories-list/repositories-list.tsx",
       "line": 408
-    },
-    {
-      "file": "renderer.js",
-      "text": "Clone Repository…",
-      "source": "app/src/ui/repositories-list/repositories-list.tsx",
-      "line": 420
     },
     {
       "file": "renderer.js",
@@ -15581,24 +15912,6 @@
     },
     {
       "file": "renderer.js",
-      "text": "Select All",
-      "source": "app/src/ui/diff/side-by-side-diff.tsx",
-      "line": 1428
-    },
-    {
-      "file": "renderer.js",
-      "text": "Added",
-      "source": "app/src/ui/diff/side-by-side-diff.tsx",
-      "line": 1575
-    },
-    {
-      "file": "renderer.js",
-      "text": "Modified",
-      "source": "app/src/ui/diff/side-by-side-diff.tsx",
-      "line": 1579
-    },
-    {
-      "file": "renderer.js",
       "text": "No oldLineNumber for ",
       "source": "app/src/ui/diff/side-by-side-diff.tsx",
       "line": 1852
@@ -15614,42 +15927,6 @@
       "text": " value for ",
       "source": "app/src/ui/diff/side-by-side-diff.tsx",
       "line": 1995
-    },
-    {
-      "file": "renderer.js",
-      "text": "Discard Changes",
-      "source": "app/src/ui/changes/filter-changes-list.tsx",
-      "line": 526
-    },
-    {
-      "file": "renderer.js",
-      "text": "Discard All Changes…",
-      "source": "app/src/ui/changes/filter-changes-list.tsx",
-      "line": 558
-    },
-    {
-      "file": "renderer.js",
-      "text": "Stash All Changes…",
-      "source": "app/src/ui/changes/filter-changes-list.tsx",
-      "line": 553
-    },
-    {
-      "file": "renderer.js",
-      "text": "Stash All Changes",
-      "source": "app/src/ui/changes/filter-changes-list.tsx",
-      "line": 550
-    },
-    {
-      "file": "renderer.js",
-      "text": "Diff Settings",
-      "source": "app/src/ui/diff/diff-options.tsx",
-      "line": 85
-    },
-    {
-      "file": "renderer.js",
-      "text": "Home",
-      "source": "app/src/ui/app-menu/menu-pane.tsx",
-      "line": 299
     },
     {
       "file": "renderer.js",
@@ -15671,12 +15948,6 @@
     },
     {
       "file": "renderer.js",
-      "text": "Default Branch",
-      "source": "app/src/ui/branches/branch-list.tsx",
-      "line": 390
-    },
-    {
-      "file": "renderer.js",
       "text": "checkout pull request from list",
       "source": "app/src/ui/branches/pull-request-list.tsx",
       "line": 299
@@ -15695,12 +15966,6 @@
     },
     {
       "file": "renderer.js",
-      "text": "Worktree",
-      "source": "app/src/ui/worktrees/worktree-list.tsx",
-      "line": 93
-    },
-    {
-      "file": "renderer.js",
       "text": "New Worktree…",
       "source": "app/src/ui/toolbar/worktree-dropdown.tsx",
       "line": 111
@@ -15716,18 +15981,6 @@
       "text": "Finder",
       "source": "app/src/ui/changes/no-changes.tsx",
       "line": 213
-    },
-    {
-      "file": "renderer.js",
-      "text": "Settings",
-      "source": "app/src/ui/changes/no-changes.tsx",
-      "line": 331
-    },
-    {
-      "file": "renderer.js",
-      "text": "Settings",
-      "source": "app/src/ui/tutorial/tutorial-panel.tsx",
-      "line": 157
     },
     {
       "file": "renderer.js",
@@ -15776,18 +16029,6 @@
       "text": " branch-name-warning branch-name-error",
       "source": "app/src/ui/lib/ref-name-text-box.tsx",
       "line": 123
-    },
-    {
-      "file": "renderer.js",
-      "text": "Discard Changes",
-      "source": "app/src/ui/discard-changes/discard-changes-dialog.tsx",
-      "line": 62
-    },
-    {
-      "file": "renderer.js",
-      "text": "Trash",
-      "source": "app/src/ui/discard-changes/discard-changes-dialog.tsx",
-      "line": 93
     },
     {
       "file": "renderer.js",
@@ -15869,12 +16110,6 @@
     },
     {
       "file": "renderer.js",
-      "text": "Settings",
-      "source": "app/src/ui/preferences/preferences.tsx",
-      "line": 389
-    },
-    {
-      "file": "renderer.js",
       "text": "Copilot",
       "source": "app/src/ui/preferences/preferences.tsx",
       "line": 409
@@ -15884,12 +16119,6 @@
       "text": "Git",
       "source": "app/src/ui/preferences/preferences.tsx",
       "line": 414
-    },
-    {
-      "file": "renderer.js",
-      "text": "Choose the GitHub Copilot application (.app).",
-      "source": "app/src/ui/preferences/preferences.tsx",
-      "line": 1031
     },
     {
       "file": "renderer.js",
@@ -15929,21 +16158,9 @@
     },
     {
       "file": "renderer.js",
-      "text": "Open With…",
-      "source": "app/src/ui/open-with-external-editor/open-with-external-editor.tsx",
-      "line": 151
-    },
-    {
-      "file": "renderer.js",
       "text": "SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace, 'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol'",
       "source": "app/src/ui/get-monospace-font-family.ts",
       "line": 5
-    },
-    {
-      "file": "renderer.js",
-      "text": "Open Preferences",
-      "source": "app/src/ui/app-error.tsx",
-      "line": 277
     },
     {
       "file": "renderer.js",
@@ -15989,45 +16206,9 @@
     },
     {
       "file": "renderer.js",
-      "text": "URL",
-      "source": "app/src/ui/clone-repository/clone-repository.tsx",
-      "line": 279
-    },
-    {
-      "file": "renderer.js",
-      "text": "Sign In",
-      "source": "app/src/ui/clone-repository/clone-repository.tsx",
-      "line": 520
-    },
-    {
-      "file": "renderer.js",
       "text": "The local path cannot end in .app on macOS. Choose a different folder name to avoid creating an application bundle.",
       "source": "app/src/ui/clone-repository/clone-repository.tsx",
       "line": 699
-    },
-    {
-      "file": "renderer.js",
-      "text": "Unable to Locate Git",
-      "source": "app/src/ui/install-git/install.tsx",
-      "line": 48
-    },
-    {
-      "file": "renderer.js",
-      "text": "Terminal window",
-      "source": "app/src/ui/install-git/install.tsx",
-      "line": 56
-    },
-    {
-      "file": "renderer.js",
-      "text": "Open Preferences",
-      "source": "app/src/ui/editor/editor-error.tsx",
-      "line": 66
-    },
-    {
-      "file": "renderer.js",
-      "text": "Unable to Open External Editor",
-      "source": "app/src/ui/editor/editor-error.tsx",
-      "line": 88
     },
     {
       "file": "renderer.js",
@@ -16055,12 +16236,6 @@
     },
     {
       "file": "renderer.js",
-      "text": "Sign In",
-      "source": "app/src/ui/publish-repository/publish.tsx",
-      "line": 274
-    },
-    {
-      "file": "renderer.js",
       "text": "GitHub Desktop",
       "source": "app/src/ui/acknowledgements/acknowledgements.tsx",
       "line": 124
@@ -16073,117 +16248,15 @@
     },
     {
       "file": "renderer.js",
-      "text": "Untrusted Server",
-      "source": "app/src/ui/untrusted-certificate/untrusted-certificate.tsx",
-      "line": 40
-    },
-    {
-      "file": "renderer.js",
-      "text": "View Certificate",
-      "source": "app/src/ui/untrusted-certificate/untrusted-certificate.tsx",
-      "line": 69
-    },
-    {
-      "file": "renderer.js",
-      "text": "Also move this repository to Trash",
-      "source": "app/src/ui/remove-repository/confirm-remove-repository.tsx",
-      "line": 81
-    },
-    {
-      "file": "renderer.js",
       "text": "support@github.com",
       "source": "app/src/ui/terms-and-conditions/terms-and-conditions.tsx",
       "line": 227
     },
     {
       "file": "renderer.js",
-      "text": "Unable to Open Shell",
-      "source": "app/src/ui/shell/shell-error.tsx",
-      "line": 42
-    },
-    {
-      "file": "renderer.js",
-      "text": "Open Preferences",
-      "source": "app/src/ui/shell/shell-error.tsx",
-      "line": 57
-    },
-    {
-      "file": "renderer.js",
-      "text": "Not Now",
-      "source": "app/src/ui/lfs/initialize-lfs.tsx",
-      "line": 47
-    },
-    {
-      "file": "renderer.js",
-      "text": "Git LFS",
-      "source": "app/src/ui/lfs/initialize-lfs.tsx",
-      "line": 65
-    },
-    {
-      "file": "renderer.js",
-      "text": "Update Existing Git LFS Filters?",
-      "source": "app/src/ui/lfs/attribute-mismatch.tsx",
-      "line": 23
-    },
-    {
-      "file": "renderer.js",
-      "text": "Not Now",
-      "source": "app/src/ui/lfs/attribute-mismatch.tsx",
-      "line": 45
-    },
-    {
-      "file": "renderer.js",
-      "text": "A repository must have a GitHub repository to add an upstream remote",
-      "source": "app/src/ui/upstream-already-exists/upstream-already-exists.tsx",
-      "line": 31
-    },
-    {
-      "file": "renderer.js",
-      "text": "A repository must have a parent repository to add an upstream remote",
-      "source": "app/src/ui/upstream-already-exists/upstream-already-exists.tsx",
-      "line": 35
-    },
-    {
-      "file": "renderer.js",
-      "text": "Upstream Already Exists",
-      "source": "app/src/ui/upstream-already-exists/upstream-already-exists.tsx",
-      "line": 44
-    },
-    {
-      "file": "renderer.js",
-      "text": "Files Too Large",
-      "source": "app/src/ui/changes/oversized-files-warning.tsx",
-      "line": 32
-    },
-    {
-      "file": "renderer.js",
-      "text": "Git LFS",
-      "source": "app/src/ui/changes/oversized-files-warning.tsx",
-      "line": 48
-    },
-    {
-      "file": "renderer.js",
-      "text": "Newer Commits on Remote",
-      "source": "app/src/ui/push-needs-pull/push-needs-pull-warning.tsx",
-      "line": 34
-    },
-    {
-      "file": "renderer.js",
       "text": "stash and checkout",
       "source": "app/src/ui/stash-changes/stash-and-switch-branch-dialog.tsx",
       "line": 148
-    },
-    {
-      "file": "renderer.js",
-      "text": "Push Rejected",
-      "source": "app/src/ui/workflow-push-rejected/workflow-push-rejected.tsx",
-      "line": 37
-    },
-    {
-      "file": "renderer.js",
-      "text": "Discard Changes",
-      "source": "app/src/ui/discard-changes/discard-selection-dialog.tsx",
-      "line": 62
     },
     {
       "file": "renderer.js",
@@ -16217,24 +16290,6 @@
     },
     {
       "file": "renderer.js",
-      "text": "Invalidated Account Token",
-      "source": "app/src/ui/invalidated-token/invalidated-token.tsx",
-      "line": 31
-    },
-    {
-      "file": "renderer.js",
-      "text": "Discarded Changes Will Be Unrecoverable",
-      "source": "app/src/ui/discard-changes/discard-changes-retry-dialog.tsx",
-      "line": 37
-    },
-    {
-      "file": "renderer.js",
-      "text": "Trash",
-      "source": "app/src/ui/discard-changes/discard-changes-retry-dialog.tsx",
-      "line": 48
-    },
-    {
-      "file": "renderer.js",
       "text": "GitHub Desktop",
       "source": "app/src/ui/lib/app-proxy.ts",
       "line": 38
@@ -16244,12 +16299,6 @@
       "text": "GitHub Copilot",
       "source": "app/src/ui/copilot/copilot-disclaimer.tsx",
       "line": 40
-    },
-    {
-      "file": "renderer.js",
-      "text": "Settings → Copilot",
-      "source": "app/src/ui/multi-commit-operation/dialog/copilot-conflict-resolution-always-nudge.tsx",
-      "line": 42
     },
     {
       "file": "renderer.js",

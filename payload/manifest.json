@@ -11,8 +11,8 @@
     {
       "name": "renderer.js",
       "original": "ECBD659F993A8DD6B30767F5321279B0CAABF937E5EEF05F0F163A3F271CC289",
-      "patched": "79904A59FDF5865465F53A6C49D5A2D3E53FC500D18E2DC2CBEB19C1C01D09DB",
-      "occurrences": 2225
+      "patched": "72816F76076FCE86E8C225B58864B882567FEA8FE4F9BDFCE714268BD0F53007",
+      "occurrences": 2278
     },
     {
       "name": "crash.js",
@@ -21,14 +21,14 @@
       "occurrences": 6
     }
   ],
-  "occurrences": 2352,
-  "unique": 1857,
+  "occurrences": 2405,
+  "unique": 1874,
   "caseAliases": 189,
-  "supplementEntries": 76,
+  "supplementEntries": 115,
   "roleLabels": [
     "main.js:window-menu",
     "main.js:help-menu",
     "main.js:window-items"
   ],
-  "dictionarySha256": "A875AA464C810B8E866841659E0FABFF89FAAF80A809544CF7283E187201CE19"
+  "dictionarySha256": "FD351D294BB86A59BE771A51705A3737170C2D950C9AED5E12340F7689210FBA"
 }
