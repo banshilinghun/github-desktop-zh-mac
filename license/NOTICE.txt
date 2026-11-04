@@ -1,0 +1,13 @@
+This is an unofficial localization patch for GitHub Desktop 3.6.10.
+
+Dictionary and patch-engine portions are adapted from:
+https://github.com/Johnserf-Seed/GitHub-Desktop-Chinese-Language-Pack
+Copyright notice and MIT terms are preserved in THIRD-PARTY-LICENSE.txt.
+
+Local modifications: reviewed additional translations, crash-page coverage,
+module parsing, operation-discriminator/parser-needle/CSS-token protections,
+checksum-pinned reproducible builds, and transactional Windows patch installer.
+
+Acorn license is preserved in acorn-LICENSE.txt.
+Bundled patched application resources retain their upstream licensing notices.
+GitHub Desktop and GitHub trademarks belong to their respective owners.

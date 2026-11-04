@@ -1,0 +1,108 @@
+GitHub Desktop 3.6.10 简体中文补丁 · macOS (darwin) 移植版
+================================================================
+
+把 GitHub Desktop-ZH-3.6.10（Windows 版补丁包）里同一套词库与翻译引擎，
+针对 macOS 版 GitHub Desktop 3.6.10 重新生成的原生补丁。
+
+本机现成产物
+----------------------------------------------------------------
+应用：  ~/Applications/GitHub Desktop 中文.app      （已装好、已签名、可双击）
+备份：  应用内 Contents/Resources/app/.zh-original-3.6.10/
+补丁：  payload/{main.js,renderer.js,crash.js} + payload/manifest.json
+
+实测覆盖：替换 2,352 处 / 1,857 条不同文案
+  main.js      121 处（主进程菜单、原生对话框）
+  renderer.js 2225 处（主窗口 UI，含欢迎页、设置、差异、提交、分支…）
+  crash.js       6 处（崩溃页）
+Windows 包自报 2,422 处；差额来自 Windows 专属代码（文件资源管理器、
+&X 助记符菜单项）在 macOS 构建里并不存在。
+
+为什么不能直接用 Windows 包
+----------------------------------------------------------------
+1. Windows 包里是 Windows 构建产物，SHA-256 与 macOS 构建不同（体积也不同），
+   替换进 .app 会让应用直接起不来。
+2. 安装方式是 install.cmd + patch.ps1 + %LOCALAPPDATA%\GitHubDesktop，
+   macOS 没有这些路径和脚本。
+3. macOS 构建的菜单源串不带 & 助记符：Windows 是 "&File" → "文件(&F)"，
+   macOS 是 "File"，词库对不上，直接套用会让整条菜单栏留英文。
+4. 两个平台的英文文案还有大小写差异（Windows "…on your local drive…"，
+   macOS "…on your Local Drive…"），精确匹配会漏掉 322 处。
+
+所以这里做了三件事
+----------------------------------------------------------------
+1. 词库-mac补充.json：76 条按 macOS 实际源串重写的译文，sources 限定在菜单模块，
+   不误伤同名的通用词汇（File/View/Copy 这类）。
+2. 大小写别名：对仅大小写不同的条目自动对齐译文（189 条生效），
+   并沿用引擎"像界面文案"的判定，跳过 octicon 名、CSS 类名、状态键、
+   dispatcher/stores 等非展示字符串，避免把功能字符串翻掉。
+3. 哈希锁定：生成器比对原文 SHA-256 与清单，不一致直接报错，不产出半成品。
+
+安装 / 还原 / 校验
+----------------------------------------------------------------
+  ./install.sh --app "$HOME/Applications/GitHub Desktop 中文.app"      # 安装
+  ./install.sh --restore --app "$HOME/Applications/GitHub Desktop 中文.app"  # 还原
+  ./install.sh --verify --app "$HOME/Applications/GitHub Desktop 中文.app"   # 只校验
+
+不带 --app 时默认 /Applications/GitHub Desktop.app。
+
+注意 macOS 的 App 管理（App Management）权限：它保护"其他开发者签名的应用包"，
+非授信进程改写会得到 Operation not permitted（连 ~/Applications 里的副本也一样）。
+若要原地打 /Applications 里的官方版，二选一：
+  a) 系统设置 → 隐私与安全性 → App 管理 → 允许 DeepSeek Harness / 终端；
+  b) 自己在终端里跑 install.sh（系统会弹授权）。
+本机采用的做法：新建一个未签名副本（rsync 排除 _CodeSignature）→ 打补丁 →
+codesign --force --deep --sign - 本地重签，绕开该限制，官方原版保持不动。
+
+安装器行为
+----------------------------------------------------------------
+- 校验产品名、版本、三文件 SHA-256（原始或已打补丁均接受），payload 与备份各自校验。
+- 应用运行中拒绝安装；先在应用内建 .zh-original-3.6.10 备份，重复安装不覆盖备份。
+- 逐文件原子替换，失败按已替换清单回滚，最后统一复校。
+- 改 Resources 会让 GitHub 官方签名与公证失效，脚本用本地 ad-hoc 签名重新封装
+  并清掉 quarantine/provenance，否则 macOS 会以"应用已损坏"拒绝启动。
+- 不碰仓库、账户、网络设置；不注入作者链接、不埋推广内容。
+
+首次启动会弹钥匙串
+----------------------------------------------------------------
+因为代码签名换成了本地临时签名，系统认为"不是同一个 App"，
+会弹："GitHub Desktop Helper 想要访问你的钥匙串中的密钥 GitHub - https://api.github.com"。
+点一次「始终允许」即可，之后不再弹。这是重签名的必然结果，不是补丁在偷密码。
+
+已验证 / 未验证
+----------------------------------------------------------------
+已验证：node --check 语法、AST 结构等价（引擎逐文件比对，除字符串字面量外程序结构不变）、
+        翻译范围来源校验（靠 .map 定位每串属于哪个源文件）、可重复构建、
+        安装/还原/重复执行幂等与哈希拦截、应用实际启动并渲染中文界面（截图核对：
+        欢迎页"开始使用吧！/创建教程仓库…/从互联网克隆仓库…/在本地磁盘创建新仓库…/
+        从本地磁盘添加现有仓库…"、侧栏与右键菜单均为中文）。
+未验证：逐页目视全部界面；Git/服务器/Copilot 实时返回的文本仍是原文。
+
+仍为英文的部分
+----------------------------------------------------------------
+- 菜单栏的 "Window" 与 "Help"：Electron 由 role 生成，源码里没有对应字符串，
+  词库替换不到；本补丁未为此改代码结构。
+- Git、GitHub 服务器、AI 实时返回内容，外部网页，诊断日志。
+- 产品名/模型名/快捷键/文件名/示例地址/用户内容，按原样保留。
+- 143 条 pending 候选（引擎判定"像 UI"但词库未收录），逐条列在
+  payload/translation-report.json 的 pending 里，未擅自翻译。
+
+重新生成
+----------------------------------------------------------------
+  node source/build-mac.cjs "/Applications/GitHub Desktop.app" ./payload
+需要 Node.js 22+。
+
+排错
+----------------------------------------------------------------
+应用点不动 / 启动即退出：
+  echo $ELECTRON_RUN_AS_NODE        # 若为 1，Electron 应用会退化成纯 Node 进程，秒退
+  env -u ELECTRON_RUN_AS_NODE open -n "$HOME/Applications/GitHub Desktop 中文.app"
+校验签名：
+  codesign --verify --deep --strict "$HOME/Applications/GitHub Desktop 中文.app"
+
+许可与来源
+----------------------------------------------------------------
+翻译引擎与基础词库改编自 Johnserf-Seed 的 MIT 项目
+https://github.com/Johnserf-Seed/GitHub-Desktop-Chinese-Language-Pack
+macOS 词库补充、大小写对齐与安装器为本地新增。见 THIRD-PARTY-LICENSE.txt、acorn-LICENSE.txt。
+GitHub Desktop 原项目：https://github.com/desktop/desktop
+本补丁为非官方汉化，与 GitHub 无隶属关系。

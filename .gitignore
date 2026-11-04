@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+.AppleDouble
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 构建临时产物
+*.zh-stage
+*.zh-previous
+/rebuilt/
+/tmp/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# 其他
+*~
+Thumbs.db

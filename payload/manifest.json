@@ -1,0 +1,34 @@
+{
+  "version": "3.6.10",
+  "platform": "darwin",
+  "files": [
+    {
+      "name": "main.js",
+      "original": "DDDA40D2D2C15789A6BC60700B934831989ED97C30F538512DCFEB5DD0C2DFF1",
+      "patched": "8F392FEF6A2CA9A0266CC85DBDCB87FC5D740EEA8B06947948804AB5D28F0736",
+      "occurrences": 121
+    },
+    {
+      "name": "renderer.js",
+      "original": "ECBD659F993A8DD6B30767F5321279B0CAABF937E5EEF05F0F163A3F271CC289",
+      "patched": "79904A59FDF5865465F53A6C49D5A2D3E53FC500D18E2DC2CBEB19C1C01D09DB",
+      "occurrences": 2225
+    },
+    {
+      "name": "crash.js",
+      "original": "A5EF4A045B5286E8D0DC20F8C2BBE807E4EE361A9D1D2C1152AD002207EC624E",
+      "patched": "D56DEF7F4A96C6711337663384A231243761D8056B7D6879E2F52893D022B312",
+      "occurrences": 6
+    }
+  ],
+  "occurrences": 2352,
+  "unique": 1857,
+  "caseAliases": 189,
+  "supplementEntries": 76,
+  "roleLabels": [
+    "main.js:window-menu",
+    "main.js:help-menu",
+    "main.js:window-items"
+  ],
+  "dictionarySha256": "A875AA464C810B8E866841659E0FABFF89FAAF80A809544CF7283E187201CE19"
+}
